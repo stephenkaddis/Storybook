@@ -11,6 +11,10 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     backgroundColor: { control: 'color' },
+    variant: {
+      control: { type: 'select' },
+      options: ['primary', 'secondary', 'success'],
+    },
     size: {
       control: { type: 'select' },
       options: ['small', 'medium', 'large'],
@@ -52,5 +56,12 @@ export const Disabled: Story = {
   args: {
     disabled: true,
     label: 'Button',
+  },
+};
+
+export const Success: Story = {
+  args: {
+    variant: 'success',
+    label: 'Success',
   },
 };

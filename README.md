@@ -67,3 +67,14 @@ The static files will be generated in the `storybook-static` directory.
 ## GitHub Setup
 
 To connect this project to GitHub, see [GITHUB_SETUP.md](./GITHUB_SETUP.md) for detailed instructions.
+
+## Chromatic (Visual Testing)
+
+This project is set up for Chromatic visual testing. To get started:
+
+1. Sign up at [Chromatic](https://www.chromatic.com/)
+2. Create a project and get your project token
+3. Set the token: `export CHROMATIC_PROJECT_TOKEN=your-token`
+4. Run: `npm run chromatic`
+
+For detailed setup instructions, see [CHROMATIC_SETUP.md](./CHROMATIC_SETUP.md).

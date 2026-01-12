@@ -32,6 +32,19 @@
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 1px inset;
 }
 
+.storybook-button--success {
+  color: white;
+  background-color: #28a745;
+}
+
+.storybook-button--success:hover {
+  background-color: #218838;
+}
+
+.storybook-button--success:active {
+  background-color: #1e7e34;
+}
+
 .storybook-button--small {
   font-size: 12px;
   padding: 10px 16px;

@@ -6,6 +6,10 @@ export interface ButtonProps {
    */
   primary?: boolean;
   /**
+   * Button variant style
+   */
+  variant?: 'primary' | 'secondary' | 'success';
+  /**
    * What background color to use
    */
   backgroundColor?: string;
@@ -32,15 +36,16 @@ export interface ButtonProps {
  */
 export const Button: React.FC<ButtonProps> = ({
   primary = false,
+  variant,
   size = 'medium',
   backgroundColor,
   label,
   disabled = false,
   ...props
 }) => {
-  const mode = primary
-    ? 'storybook-button--primary'
-    : 'storybook-button--secondary';
+  // Support both old 'primary' prop and new 'variant' prop for backward compatibility
+  const buttonVariant = variant || (primary ? 'primary' : 'secondary');
+  const mode = `storybook-button--${buttonVariant}`;
   
   return (
     <button
