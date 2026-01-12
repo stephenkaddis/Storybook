@@ -1,0 +1,80 @@
+.storybook-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 4px 12px;
+  white-space: nowrap;
+  position: relative;
+}
+
+.storybook-badge--default {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.storybook-badge--primary {
+  background-color: #1ea7fd;
+  color: white;
+}
+
+.storybook-badge--success {
+  background-color: #28a745;
+  color: white;
+}
+
+.storybook-badge--warning {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.storybook-badge--error {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.storybook-badge--small {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.storybook-badge--medium {
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+.storybook-badge--large {
+  font-size: 14px;
+  padding: 6px 16px;
+  border-radius: 16px;
+}
+
+.storybook-badge__close {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  padding: 0;
+  margin-left: 4px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.storybook-badge__close:hover {
+  opacity: 1;
+}
+
+.storybook-badge__close:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
