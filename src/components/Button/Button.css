@@ -46,17 +46,17 @@
 }
 
 .storybook-button--small {
-  font-size: 16px;
+  font-size: 18px;
   padding: 10px 16px;
 }
 
 .storybook-button--medium {
-  font-size: 20px;
+  font-size: 22px;
   padding: 11px 20px;
 }
 
 .storybook-button--large {
-  font-size: 24px;
+  font-size: 26px;
   padding: 12px 24px;
 }
 
