@@ -1,0 +1,95 @@
+.action-items-list {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-width: 400px;
+}
+
+.action-items-list__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.action-items-list__title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.action-items-list__count {
+  font-size: 14px;
+  color: #666;
+}
+
+.action-items-list__content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.action-items-list__item {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.action-items-list__item:hover {
+  background: #f0f0f0;
+}
+
+.action-items-list__item--completed {
+  opacity: 0.6;
+}
+
+.action-items-list__item--completed .action-items-list__text {
+  text-decoration: line-through;
+}
+
+.action-items-list__checkbox {
+  margin-top: 4px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+.action-items-list__content-wrapper {
+  flex: 1;
+}
+
+.action-items-list__text {
+  margin: 0 0 8px 0;
+  font-size: 15px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.action-items-list__meta {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: #999;
+  flex-wrap: wrap;
+}
+
+.action-items-list__assignee,
+.action-items-list__due-date,
+.action-items-list__priority {
+  font-weight: 600;
+}
+
+.action-items-list__empty {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+  font-style: italic;
+}
