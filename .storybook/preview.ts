@@ -14,6 +14,8 @@ const preview: Preview = {
       diffThreshold: 0.063,
       // Disable animations that might cause false positives
       delay: 0,
+      // Explicitly set baseline branch for comparisons
+      viewport: [1280, 720],
     },
   },
 };
