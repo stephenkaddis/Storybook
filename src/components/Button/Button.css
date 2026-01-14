@@ -60,17 +60,17 @@
 
 .storybook-button--small {
   font-size: 13px;
-  padding: 8px 14px;
+  padding: 8px 16px;
 }
 
 .storybook-button--medium {
   font-size: 14px;
-  padding: 10px 18px;
+  padding: 10px 20px;
 }
 
 .storybook-button--large {
   font-size: 16px;
-  padding: 12px 24px;
+  padding: 14px 28px;
 }
 
 .storybook-button:disabled {
