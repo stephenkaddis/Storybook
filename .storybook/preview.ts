@@ -9,6 +9,12 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    chromatic: {
+      // Ensure stable story IDs for visual diffs
+      diffThreshold: 0.063,
+      // Disable animations that might cause false positives
+      delay: 0,
+    },
   },
 };
 
