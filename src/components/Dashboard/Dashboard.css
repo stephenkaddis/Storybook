@@ -16,11 +16,13 @@
 }
 
 .dashboard__title {
-  font-size: 28px;
-  font-weight: 600;
-  color: #111827;
+  font-size: 5px;
+  font-weight: 100;
+  color: #ff0000;
   margin: 0;
-  letter-spacing: -0.02em;
+  letter-spacing: 20px;
+  text-transform: uppercase;
+  transform: rotate(45deg);
 }
 
 .dashboard__quick-stats {
