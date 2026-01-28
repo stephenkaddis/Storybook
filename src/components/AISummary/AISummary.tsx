@@ -48,21 +48,23 @@ export const AISummary: React.FC<AISummaryProps> = ({
   duration,
   participantCount,
 }) => {
-  const sentimentColors = {
-    positive: '#28a745',
-    neutral: '#6c757d',
-    negative: '#dc3545',
+  const sentimentClasses = {
+    positive: 'text-success',
+    neutral: 'text-base-content/60',
+    negative: 'text-error',
   };
 
   return (
-    <div className="ai-summary">
-      <div className="ai-summary__header">
-        <div className="ai-summary__title-section">
-          <h2 className="ai-summary__title">{title}</h2>
-          <span className="ai-summary__badge">AI Generated</span>
+    <div className="card bg-base-100 rounded-3xl p-8 shadow-xl border border-base-300 max-w-full">
+      <div className="mb-6 pb-5 border-b border-base-300">
+        <div className="flex items-center gap-3 mb-3">
+          <h2 className="text-3xl font-bold text-base-content tracking-tight">{title}</h2>
+          <span className="badge badge-primary badge-sm font-bold uppercase">
+            AI Generated
+          </span>
         </div>
         {(duration || participantCount) && (
-          <div className="ai-summary__meta">
+          <div className="flex gap-4 text-sm text-base-content/60">
             {duration && <span>⏱️ {duration} min</span>}
             {participantCount && <span>👥 {participantCount} people</span>}
           </div>
@@ -70,25 +72,20 @@ export const AISummary: React.FC<AISummaryProps> = ({
       </div>
 
       {sentiment && (
-        <div className="ai-summary__sentiment">
-          <span
-            className="ai-summary__sentiment-indicator"
-            style={{ color: sentimentColors[sentiment] }}
-          >
-            ●
-          </span>
+        <div className="flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-base-200 to-base-300 rounded-xl mb-6 text-sm text-base-content/70 border border-base-300">
+          <span className={`text-lg ${sentimentClasses[sentiment]}`}>●</span>
           <span>Sentiment: {sentiment}</span>
         </div>
       )}
 
-      <div className="ai-summary__content">
-        <p className="ai-summary__text">{summary}</p>
+      <div className="mb-6">
+        <p className="text-base leading-relaxed text-base-content/80 font-normal">{summary}</p>
       </div>
 
       {keyPoints.length > 0 && (
-        <div className="ai-summary__section">
-          <h3 className="ai-summary__section-title">Key Points</h3>
-          <ul className="ai-summary__list">
+        <div className="mt-6 pt-6 border-t border-base-300">
+          <h3 className="text-lg font-semibold text-base-content mb-4">Key Points</h3>
+          <ul className="list-disc list-inside text-base-content/80 leading-relaxed space-y-2">
             {keyPoints.map((point, index) => (
               <li key={index}>{point}</li>
             ))}
@@ -97,21 +94,24 @@ export const AISummary: React.FC<AISummaryProps> = ({
       )}
 
       {actionItems.length > 0 && (
-        <div className="ai-summary__section">
-          <h3 className="ai-summary__section-title">Action Items</h3>
-          <div className="ai-summary__action-items">
+        <div className="mt-6 pt-6 border-t border-base-300">
+          <h3 className="text-lg font-semibold text-base-content mb-4">Action Items</h3>
+          <div className="flex flex-col gap-3">
             {actionItems.map((item) => (
-              <div key={item.id} className="ai-summary__action-item">
+              <div
+                key={item.id}
+                className="flex items-start gap-3 p-4 bg-gradient-to-r from-base-200 to-base-300 rounded-xl border border-base-300 hover:from-base-300 hover:to-base-200 hover:translate-x-1 transition-all duration-200 hover:shadow-md"
+              >
                 <input
                   type="checkbox"
                   id={item.id}
-                  className="ai-summary__checkbox"
+                  className="checkbox checkbox-sm mt-1 cursor-pointer"
                 />
-                <label htmlFor={item.id} className="ai-summary__action-text">
+                <label htmlFor={item.id} className="flex-1 text-base text-base-content cursor-pointer leading-relaxed">
                   {item.text}
                 </label>
                 {(item.assignee || item.dueDate) && (
-                  <div className="ai-summary__action-meta">
+                  <div className="flex gap-3 text-xs text-base-content/50 mt-1">
                     {item.assignee && <span>👤 {item.assignee}</span>}
                     {item.dueDate && <span>📅 {item.dueDate}</span>}
                   </div>

@@ -30,3 +30,6 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           exitOnceUploaded: true # Skip waiting for build results (Chromatic will report to GitHub)
           exitZeroOnChanges: false # Fail the build if there are visual changes
+          buildScriptName: build-storybook
+          # Ensure we compare against the main branch baseline
+          onlyChanged: false
