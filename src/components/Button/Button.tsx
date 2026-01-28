@@ -45,13 +45,25 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   // Support both old 'primary' prop and new 'variant' prop for backward compatibility
   const buttonVariant = variant || (primary ? 'primary' : 'secondary');
-  const mode = `storybook-button--${buttonVariant}`;
+  
+  // Map variants to DaisyUI button classes
+  const variantClasses = {
+    primary: 'btn-primary',
+    secondary: 'btn-outline',
+    success: 'btn-success',
+  };
+  
+  const sizeClasses = {
+    small: 'btn-sm',
+    medium: 'btn-md',
+    large: 'btn-lg',
+  };
   
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
+      className={`btn ${variantClasses[buttonVariant]} ${sizeClasses[size]} font-semibold tracking-tight`}
+      style={backgroundColor ? { backgroundColor } : undefined}
       disabled={disabled}
       {...props}
     >

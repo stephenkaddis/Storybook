@@ -29,19 +29,29 @@ export const Badge: React.FC<BadgeProps> = ({
   onClose,
   ...props
 }) => {
+  const variantClasses = {
+    default: 'badge-neutral',
+    primary: 'badge-primary',
+    success: 'badge-success',
+    warning: 'badge-warning',
+    error: 'badge-error',
+  };
+
+  const sizeClasses = {
+    small: 'badge-sm',
+    medium: 'badge-md',
+    large: 'badge-lg',
+  };
+
   return (
     <span
-      className={[
-        'storybook-badge',
-        `storybook-badge--${variant}`,
-        `storybook-badge--${size}`,
-      ].join(' ')}
+      className={`badge ${variantClasses[variant]} ${sizeClasses[size]} font-semibold tracking-tight`}
       {...props}
     >
       {label}
       {onClose && (
         <button
-          className="storybook-badge__close"
+          className="ml-1 opacity-70 hover:opacity-100 transition-opacity flex items-center justify-center"
           onClick={onClose}
           aria-label="Close"
         >

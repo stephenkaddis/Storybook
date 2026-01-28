@@ -60,19 +60,24 @@ export const Input: React.FC<InputProps> = ({
     }
   };
 
+  const sizeClasses = {
+    small: 'input-sm',
+    medium: 'input-md',
+    large: 'input-lg',
+  };
+
   return (
-    <div className="storybook-input-wrapper">
+    <div className="form-control flex flex-col gap-2">
       {label && (
-        <label className="storybook-input-label">{label}</label>
+        <label className="label">
+          <span className="label-text text-sm font-semibold text-base-content tracking-tight">
+            {label}
+          </span>
+        </label>
       )}
       <input
         type={type}
-        className={[
-          'storybook-input',
-          `storybook-input--${size}`,
-          error ? 'storybook-input--error' : '',
-          disabled ? 'storybook-input--disabled' : '',
-        ].join(' ')}
+        className={`input input-bordered ${sizeClasses[size]} ${error ? 'input-error' : ''} ${disabled ? 'input-disabled' : ''} w-full`}
         placeholder={placeholder}
         value={value}
         disabled={disabled}
@@ -80,7 +85,11 @@ export const Input: React.FC<InputProps> = ({
         {...props}
       />
       {error && errorMessage && (
-        <span className="storybook-input-error">{errorMessage}</span>
+        <label className="label">
+          <span className="label-text-alt text-error text-xs font-medium">
+            {errorMessage}
+          </span>
+        </label>
       )}
     </div>
   );
